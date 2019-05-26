@@ -29,7 +29,7 @@ function counter(state= initialState, action){
     switch (action.type) {
         case types.CREATE:
             return {
-                counter:[
+                counters:[
                     ...counters,
                     {
                         color:action.color,
@@ -39,7 +39,7 @@ function counter(state= initialState, action){
             };
         case types.REMOVE:
             return {
-                counters:counter.slice(0, counters.length -1)
+                counters:counters.slice(0, counters.length -1)
             };
 
         case types.INCREMENT:

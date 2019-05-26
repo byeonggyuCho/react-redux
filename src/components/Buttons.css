@@ -14,7 +14,7 @@
     cursor: pointer;
 }
 
-.Buttons add {
+.Buttons .add {
     background: #37b24d;
 }
 
@@ -22,7 +22,7 @@
     background: #40c057;
 }
 
-.Buttons .remve {
+.Buttons .remove {
     background: #f03e3e;
 }
 
