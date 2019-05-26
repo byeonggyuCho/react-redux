@@ -1,8 +1,8 @@
+/*
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 import Counter from '../containers/Counter';
 
-/*
     컨테이너
     - 스토어가 연동되어있다.
     - connect 함수를 이용하여 스토어에 연동시킨다.

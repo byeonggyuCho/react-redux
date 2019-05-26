@@ -66,10 +66,10 @@ function counter(state= initialState, action){
                 };
             case types.SET_COLOR:
                 return {
-                    counter:[
-                        ...counter.slice(0,action.index),
+                    counters:[
+                        ...counters.slice(0,action.index),
                         {
-                            ...counter[action.index],
+                            ...counters[action.index],
                             color:action.color
                         },
                         ...counters.slice(action.index + 1, counters.length)
