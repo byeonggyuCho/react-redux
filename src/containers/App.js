@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+//Component
 import Buttons from '../components/Buttons'
 import CounterListContainer from './CounterListContainer';
-//import CounterContainer from './CounterContainer';
+
+//lib
 import getRandomColor from '../lib/getRandomColor'
 
-import * as actions from '../actions';
-import { connect } from 'react-redux';
+//모듈
+import * as calculator from '../modules/calculator';
+
 
 class App extends Component {
     render () {
@@ -24,8 +29,8 @@ class App extends Component {
 
 
 const mapToDispatch = (dispatch) =>({
-    onCreate: () =>dispatch(actions.create(getRandomColor())),
-    onRemove: () =>dispatch(actions.remove())
+    onCreate: () => dispatch(calculator.create(getRandomColor())),
+    onRemove: () => dispatch(calculator.remove())
 });
 
 export default connect(null, mapToDispatch)(App);

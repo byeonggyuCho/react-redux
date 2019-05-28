@@ -8,8 +8,8 @@ const Counter = ({number, color, index,onIncrement, onDecrement, onSetColor}) =>
         <div
             className ="Counter"
             onClick      = {()=>onIncrement(index)}
-            onDoubleClick={() => onSetColor(index)}
-            onContextMenu={(e) => {
+            onDoubleClick= {() => onSetColor(index)}
+            onContextMenu= {(e) => {
                 e.preventDefault();
                 onDecrement(index);
             }}

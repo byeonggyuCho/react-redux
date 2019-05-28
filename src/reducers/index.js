@@ -6,25 +6,50 @@
     # 루트 리듀서
     서브 리듀서들을 하나로 합치는 곳.
 
+    #immutable
+    fromJS
+        자동으로 Map List 넣어줌 편리함.
+    Map
+        get()
+        getIn()
+        set()
+        setIn()
+        metge();
+        mergeIn()       //성능상으로는 setIn을하는게 낫다.
+    List
+        map
+        filter
+        sort
+        push
+        pop
+
 */
-
+import {Map, fromJS, List} from 'immutable';
 import * as types from '../actions/ActionTypes';
+import {handleActions} from 'redux-actions'
 
-const initialState = {
-    counters :[
-        {
+
+
+const initialState = Map({
+    counters :List([
+        Map({
             color: 'black',
             number:0
-        }
-    ]
-};
+        })
+    ])
+});
 
+
+// const reducer = handleActions({
+//     INCREMENT: (satte, action) =>({
+//         counter :
+//     })
+
+// })
 
 function counter(state= initialState, action){
 
     const { counters } = state;
-
-    console.warn(action);
 
     switch (action.type) {
         case types.CREATE:
@@ -32,7 +57,7 @@ function counter(state= initialState, action){
                 counters:[
                     ...counters,
                     {
-                        color:action.color,
+                        color:action.payload,
                         number:0
                     }
                 ]
@@ -45,34 +70,34 @@ function counter(state= initialState, action){
         case types.INCREMENT:
             return {
                 counters:[
-                    ...counters.slice(0, action.index),
+                    ...counters.slice(0, action.payload),
                     {
-                        ...counters[action.index],
-                        number:counters[action.index].number +1
+                        ...counters[action.payload],
+                        number:counters[action.payload].number +1
                     },
-                    ...counters.slice(action.index +1, counters.length)
+                    ...counters.slice(action.payload +1, counters.length)
                 ]
             }
             case types.DECREMENT:
                 return {
                     counters:[
-                        ...counters.slice(0,action.index),
+                        ...counters.slice(0,action.payload),
                         {
-                            ...counters[action.index],
-                            number:counters[action.index].number-1
+                            ...counters[action.payload],
+                            number:counters[action.payload].number-1
                         },
-                        ...counters.slice(action.index + 1, counters.length)
+                        ...counters.slice(action.payload + 1, counters.length)
                     ]
                 };
             case types.SET_COLOR:
                 return {
                     counters:[
-                        ...counters.slice(0,action.index),
+                        ...counters.slice(0,action.payload.index),
                         {
-                            ...counters[action.index],
-                            color:action.color
+                            ...counters[action.payload.index],
+                            color:action.payload.color
                         },
-                        ...counters.slice(action.index + 1, counters.length)
+                        ...counters.slice(action.payload.index + 1, counters.length)
                     ]
                 };
             default:
@@ -80,7 +105,21 @@ function counter(state= initialState, action){
     }
 }
 
-export default counter;
+//export default counter;
+
+export default handleActions({
+    [INCREMENT]: (status, action) =>{
+    
+    const {number,color} = action.payload;
+
+
+
+
+    },
+    [DECREMENT]: (status, action) => {
+
+    }
+})
 
 
 
