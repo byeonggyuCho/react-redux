@@ -18,11 +18,13 @@ const Buttons = ({onCreate, onRemove}) =>{
     );
 }
 
+// 데이터 타입 설정
 Buttons.propTypes = {
     onCreate: PropTypes.func,
     onRemove: PropTypes.func
 };
 
+// 기본값 설정.
 Buttons.defaultProps = {
     onCreate: () => console.warn('onCreate not defined'),
     onRemove: () => console.warn('onRemove not defined')

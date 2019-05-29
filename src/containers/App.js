@@ -8,7 +8,7 @@ import CounterListContainer from './CounterListContainer';
 //lib
 import getRandomColor from '../lib/getRandomColor'
 
-//모듈
+//module
 import * as calculator from '../modules/calculator';
 
 
@@ -27,10 +27,10 @@ class App extends Component {
     }
 }
 
-
+//파라미터는 payload 속성에 저장된다.
 const mapToDispatch = (dispatch) =>({
-    onCreate: () => dispatch(calculator.create(getRandomColor())),
-    onRemove: () => dispatch(calculator.remove())
+    onCreate: () => dispatch(calculator.increment(getRandomColor())),
+    onRemove: () => dispatch(calculator.decrement())
 });
 
 export default connect(null, mapToDispatch)(App);

@@ -2,7 +2,7 @@
  *  Ducks 파일 구조
  *      액션타입, 액션 생성함수, 리듀서 한방에! 모듈화.
  */
-import {Map, fromJS} from 'immutable';
+import {Map,  List} from 'immutable';
 import {handleActions, createActions} from 'redux-actions';
 
 
@@ -20,22 +20,22 @@ export const set_color = createActions(SET_COLOR);
 
 
 //3.초기값 설정
-const initialState = fromJS({
-    counters :[
-        {
+const initialState = Map({
+    counters :List([
+        Map({
             color: 'black',
             number:0
-        }
-    ]
+        })
+    ])
 });
 
 //4.리듀서 정의
 export default handleActions({
     [INCREMENT]: (state, action) => {
-        return state.set('value',action.payload)
+        return state.set(counters,counters.push(action.payload))
     },
     [DECREMENT]: (state, action) => {
-        return state.set('value',action.payload)
+        return state.set(counters,counters.pop(action.payload))
     },
     [SET_COLOR]: (state, action) => {
         return state.set('value', action.payload)
