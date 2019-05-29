@@ -20,11 +20,9 @@ const initialState = {
 };
 
 
-function counter(state= initialState, action){
+function counter(state = initialState, action){
 
     const { counters } = state;
-
-    console.warn(action);
 
     switch (action.type) {
         case types.CREATE:
@@ -53,30 +51,30 @@ function counter(state= initialState, action){
                     ...counters.slice(action.index +1, counters.length)
                 ]
             }
-            case types.DECREMENT:
-                return {
-                    counters:[
-                        ...counters.slice(0,action.index),
-                        {
-                            ...counters[action.index],
-                            number:counters[action.index].number-1
-                        },
-                        ...counters.slice(action.index + 1, counters.length)
-                    ]
-                };
-            case types.SET_COLOR:
-                return {
-                    counters:[
-                        ...counters.slice(0,action.index),
-                        {
-                            ...counters[action.index],
-                            color:action.color
-                        },
-                        ...counters.slice(action.index + 1, counters.length)
-                    ]
-                };
-            default:
-                return state;
+        case types.DECREMENT:
+            return {
+                counters:[
+                    ...counters.slice(0,action.index),
+                    {
+                        ...counters[action.index],
+                        number:counters[action.index].number-1
+                    },
+                    ...counters.slice(action.index + 1, counters.length)
+                ]
+            };
+        case types.SET_COLOR:
+            return {
+                counters:[
+                    ...counters.slice(0,action.index),
+                    {
+                        ...counters[action.index],
+                        color:action.color
+                    },
+                    ...counters.slice(action.index + 1, counters.length)
+                ]
+            };
+        default:
+            return state;
     }
 }
 
