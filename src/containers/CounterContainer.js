@@ -9,15 +9,13 @@ import Counter from '../containers/Counter';
 
     # connect
     1. mapStateToProps :
-        store.getState()겨과값인 state를 파라미터로 받아 컴포넌트의 props로 사용할 객체를 반한한다.
+        store.getState()결과값인 state를 파라미터로 받아 컴포넌트의 props로 사용할 객체를 반한한다.
 
     2. mapDispatchToProps : 
         dispatch를 파라미터로 받아서 액션을 디스패치하는 함수들을 객체안에 넣어서 반환한다.
     3.mergeProps
-
-
-    connect 함수를 호출하고 나면 반환하는 함수의 파라미터로 리덕스에 연결시킬 컴포넌트를 넣으면
-    mapStateToProps와 mapdDispatchToProps에서 정의한 값들을 props로 받아오는 새 컴포넌트를 만든다.
+        connect 함수를 호출하고 나면 반환하는 함수의 파라미터로 리덕스에 연결시킬 컴포넌트를 넣으면
+        mapStateToProps와 mapdDispatchToProps에서 정의한 값들을 props로 받아오는 새 컴포넌트를 만든다.
 */
 
 /*

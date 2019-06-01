@@ -14,8 +14,12 @@ import { Provider } from 'react-redux';
 const store = createStore(reducer, window.devToolsException && window.devToolsException());
 
 
+/*
+ * 프로바이더 
+  스토어를 쉽게 연동할 수 있도록 도와주는 컴포넌트
+
+*/
 ReactDOM.render(
-    //프로바이더 :  스토어를 쉽게 연동할 수 있도록 도와주는 컴포넌트
     <Provider   store={store}>
         <App />
     </Provider>, 

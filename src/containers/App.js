@@ -9,16 +9,12 @@ import { connect } from 'react-redux';
 
 class App extends Component {
     render () {
-        //여기서 왜 this.props에 onCreate,onRemove가 있는지 모르겠음
-        //아마 프로바이더의 actions를 on뭐시기로 매핑하는듯.
-        const { onCreate, onRemove} = this.props;
-        console.log(this.props);
-        debugger;
+        const { onCreate, onRemove } = this.props;
         return (
             <div className="App">
                 <Buttons
-                    onCreate={onCreate}
-                    onRemove={onRemove}
+                    onCreate={onCreate} // dispatch(actions.create(getRandomColor()))
+                    onRemove={onRemove} // dispatch(actions.remove())
                 />
                 <CounterListContainer/>
             </div>
@@ -26,10 +22,13 @@ class App extends Component {
     }
 }
 
-
-const mapToDispatch = (dispatch) =>({
-    onCreate: () =>dispatch(actions.create(getRandomColor())),
-    onRemove: () =>dispatch(actions.remove())
+/**
+ * @name mapDispatchToProps
+ * onCreate와 onRemove를 App의 Props로 전달한다.
+ */
+const mapDispatchToProps = (dispatch) =>({
+    onCreate: ()=>dispatch(actions.create(getRandomColor())),
+    onRemove: ()=>dispatch(actions.remove())
 });
 
-export default connect(null, mapToDispatch)(App);
+export default connect(null, mapDispatchToProps)(App);

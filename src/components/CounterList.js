@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 
 import './CounterList.css';
 
+
+/**
+ * Store에서 전달받은 props를 컴포넌트의 event와 props에 매핑한다.
+ */
+
 const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
 
         const counterList = counters.map((counter, i) =>(
@@ -12,9 +17,9 @@ const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
                 key={i}
                 index={i}
                 {...counter}
-                onIncrement={onIncrement}
-                onDecrement={onDecrement}
-                onSetColor={onSetColor}
+                onIncrement={onIncrement}       // dispatch(actions.increment(index))
+                onDecrement={onDecrement}       // dispatch(actions.decrement(index))
+                onSetColor={onSetColor}         // dispatch(actions.setColor(index, getRandomColor()))
             />
         ));
 

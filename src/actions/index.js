@@ -1,8 +1,8 @@
 /*
-action 객체를 만드는 액션 생성 함수들을 선언한다. (action creators)
+* # 액션 생성함수
+* action 객체를 만드는 액션 생성 함수들을 선언한다.
 */
 
-//모든 자원을  임포트받고 "types"이라는 별칭을 정의한다.
 import * as types from './ActionTypes';
 
 export const create = (color) => ({
@@ -26,7 +26,6 @@ export const decrement = (index) => ({
     index
 });
 
-//파라미터가 있다.
 export const setColor = (index,color) => ({
     type: types.SET_COLOR,
     index,

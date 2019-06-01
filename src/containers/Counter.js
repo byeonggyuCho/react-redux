@@ -6,18 +6,18 @@ import './Counter.css';
 const Counter = ({number, color, index,onIncrement, onDecrement, onSetColor}) => {
     return (
         <div
-            className ="Counter"
-            onClick      = {()=>onIncrement(index)}
-            onDoubleClick={() => onSetColor(index)}
-            onContextMenu={(e) => {
+            className     = "Counter"
+            onClick       = {() => onIncrement(index)}
+            onDoubleClick = {() => onSetColor(index)}
+            onContextMenu = {(e) => {
                 e.preventDefault();
                 onDecrement(index);
             }}
             style={{
                 backgroundColor:color
             }}>
-                {number}
-            </div>
+            {number}
+        </div>
     );
 }
 
@@ -32,12 +32,12 @@ Counter.protoTypes = {
 };
 
 Counter.defaultProps = {
-    index:0,
+    index :0,
     number : 0,
     color : 'black',
     onIncrement : () => console.warn('onIncrement not definde'),
     onDecrement : () => console.warn('onDecrement not definde'),
-    onSetColor : () => console.warn('onSetColor not definde')
+    onSetColor  : () => console.warn('onSetColor not definde')
 };
 
 
