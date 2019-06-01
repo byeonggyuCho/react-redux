@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Counter.css';
 
+/*
+    CounterList에서 전달받은 index를 각 이벤트가 실행될때 호출할 함수의 파마리터로 전달한다.
 
+*/
 const Counter = ({number, color, index,onIncrement, onDecrement, onSetColor}) => {
     return (
         <div
             className ="Counter"
-            onClick      = {()=>onIncrement(index)}
-            onDoubleClick= {() => onSetColor(index)}
+            onClick      = {()=> onIncrement(index)}
+            onDoubleClick= {()=> onSetColor(index)}
             onContextMenu= {(e) => {
                 e.preventDefault();
                 onDecrement(index);
