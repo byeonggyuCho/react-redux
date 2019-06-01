@@ -18,11 +18,11 @@ const Buttons = ({onCreate, onRemove}) =>{
     );
 }
 
-/*
-    @ 프로퍼티 설정
+/**
+ * @ 프로퍼티 설정
     - 전달받을 프로퍼티를 설정한다.
-    - 프로퍼티의 데이터 타입을 설정한다.
-*/
+    - 프로퍼티의 데이터 타입을 설정한다. 
+ */
 Buttons.propTypes = {
     onCreate: PropTypes.func,
     onRemove: PropTypes.func

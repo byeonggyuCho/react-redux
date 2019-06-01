@@ -7,19 +7,19 @@ import * as actions from '../modules';
 import getRandomColor from '../lib/getRandomColor';
 
 
-/*
-    @ mapStateToProps
-    store 안의 state 값을 props로 연결한다.
-*/
+/**
+ * @ mapStateToProps
+ *   store 안의 state 값을 props로 연결한다. 
+ */
 const mapStateToProps = (state) =>({
     counters: state.get('counters')
 });
 
-/*
-    @ mapDispatchToProps
-        액션 생성자를 사용하여 액션을 만들고
-        해당 액션을 dispatch 하는 함수를 만든 후 이를 props로 연결한다.
-*/
+/**
+ * @ mapDispatchToProps
+ * 액션 생성자를 사용하여 액션을 만들고
+ * 해당 액션을 dispatch 하는 함수를 만든 후 이를 props로 연결한다.     
+ */
 const mapDispatchToProps = (dispatch) =>({
     onIncrement : (index) => dispatch(actions.increment(index)),
     onDecrement : (index) => dispatch(actions.decrement(index)),

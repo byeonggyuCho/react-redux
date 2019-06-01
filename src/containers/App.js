@@ -39,7 +39,10 @@ const mapToDispatch = (dispatch) =>({
 
 /*  
     # connect API
-        mapTateToProps : store에 필요한 값이 없으니 null
-        mapDisptchToProps :
+        mapTateToProps : store에 상태값이 없으니 null로 셋팅
+        mapDisptchToProps : 
+            스토어의 상태값 변경을 발생시키는 dispatch를 App 컴포넌트에 전달
+            onCreate
+            onRemove
 */
 export default connect(null, mapToDispatch)(App);
