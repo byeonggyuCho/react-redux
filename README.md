@@ -5,6 +5,5 @@
 리액트를 구성하는 기반지식을 익히는 것이 목적이다.
 
 
-duck파일 구조로 수정하기.
-immutable로 객체복사 간략화하기.
-react-action으로 액션 생성 쉽게 하기.
+# todo
+- use middleWare
