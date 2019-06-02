@@ -9,7 +9,7 @@ import getRandomColor from '../lib/getRandomColor';
 
 /**
  * @ mapStateToProps
- *   store 안의 state 값을 props로 연결한다. 
+ *   store 안의 state 값중 counters를  props로 매핑한다.
  */
 const mapStateToProps = (state) =>({
     counters: state.get('counters')

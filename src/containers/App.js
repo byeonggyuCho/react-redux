@@ -12,8 +12,6 @@ import * as actions from '../modules';
 
 /*
     프로퍼티로 전달받은 이벤트를 버튼컴포넌트에 전달한다.
-
-
 */
 class App extends Component {
     render () {
@@ -31,7 +29,7 @@ class App extends Component {
 }
 
 //파라미터는 payload 속성에 저장된다.
-const mapToDispatch = (dispatch) =>({
+const mapDispatchToProps  = (dispatch) =>({
     onCreate: () => dispatch(actions.create(getRandomColor())),
     onRemove: (index) => dispatch(actions.remove(index))
 });
@@ -39,10 +37,11 @@ const mapToDispatch = (dispatch) =>({
 
 /*  
     # connect API
-        mapTateToProps : store에 상태값이 없으니 null로 셋팅
-        mapDisptchToProps : 
-            스토어의 상태값 변경을 발생시키는 dispatch를 App 컴포넌트에 전달
-            onCreate
-            onRemove
+        mapTateToProps : store에서 관리중인 상태값을 컴포넌트의 props와 연결시키는 함수
+        mapDisptchToProps : 액션함수를 연결시키는 함수
+            스토어의 상태값 변경을 발생시키는 dispatch를 App 컴포넌트의 props로 전달
+            
+    # App
+        onCreate, onRemove가 props로 연결된 App를 exporp
 */
-export default connect(null, mapToDispatch)(App);
+export default connect(null, mapDispatchToProps )(App);

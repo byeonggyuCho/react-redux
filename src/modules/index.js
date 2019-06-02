@@ -27,7 +27,13 @@ export const decrement = createAction(DECREMENT);      //index
 export const setColor = createAction(SET_COLOR);      //{index, color}
 
 
-//3.초기값 설정
+/*
+    #3. 초기값 설정
+        store에서 관리할 상태값을 정하고 초기값을 설정한다.
+        counters:[{color:'black',number:0}]
+        store를 구독중인 컴포넌트들은 이 값을 props로 전달받을 수 있다.
+
+*/
 const initialState = Map({
     counters :List([
         Map({
@@ -37,16 +43,20 @@ const initialState = Map({
     ])
 });
 
-/*
-    @ reducer
-
-    # handleActions
-        param1 : 액션타입에 따라 실행할 함수들을 가지고 있는 객체
-        param2 : 상태의 기본값.
-
-    액션타입에 설정했던 접두사를 처기하기위해 
-    [CREATE]같은 형식으로 프로퍼티 설정.
-*/
+/**
+ * 
+ *  #4. reducer 생성.
+ * 
+ *   handleActions
+ *       param1 : 액션타입에 따라 실행할 함수들을 가지고 있는 객체
+ *       param2 : 상태의 기본값.
+ *
+ *   reducer
+ *      store에서 관리중인 상태값(state)과 actionType을 전달받는다.
+ *      액션 상태에 맞게 변경한다.
+ *      액션타입에 설정했던 접두사를 처기하기위해 [CREATE]같은 형식으로 프로퍼티 설정.
+ * 
+ */
 export default handleActions({
     [CREATE]: (state, action) => {
         const counters = state.get('counters');
