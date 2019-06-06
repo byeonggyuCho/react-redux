@@ -42,6 +42,6 @@ const mapDispatchToProps  = (dispatch) =>({
             스토어의 상태값 변경을 발생시키는 dispatch를 App 컴포넌트의 props로 전달
             
     # App
-        onCreate, onRemove가 props로 연결된 App를 exporp
+        onCreate, onRemove가 props로 연결된 App를 export
 */
 export default connect(null, mapDispatchToProps )(App);
