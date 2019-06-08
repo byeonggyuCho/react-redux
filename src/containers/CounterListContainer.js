@@ -23,6 +23,8 @@ const mapStateToProps = (state) =>({
 const mapDispatchToProps = (dispatch) =>({
     onIncrement : (index) => dispatch(actions.increment(index)),
     onDecrement : (index) => dispatch(actions.decrement(index)),
+    incrementAsync : (index) => dispatch(actions.incrementAsync(index)),
+    decrementAsync : (index) => dispatch(actions.decrementAsync(index)),
     onSetColor  : (index) => {
         const color = getRandomColor();
         dispatch(actions.setColor(index, color));

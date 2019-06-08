@@ -19,19 +19,20 @@ export const CREATE     = 'counter/CREATE';
 export const REMOVE     = 'counter/REMOVE';
 
 
-// export const incrementAsync = () => dispatch => {
-//     setTimeout(
-//         () => { dispatch(increment()) },
-//         1000
-//     );
-// }
 
-// export const decrementAsync = () => dispatch => {
-//     setTimeout(
-//         () => { dispatch(decrement()) },
-//         1000
-//     );
-// }
+export const incrementAsync = () => dispatch => {
+    setTimeout(
+        () => { dispatch(increment()) },
+        1000
+    );
+}
+
+export const decrementAsync = () => dispatch => {
+    setTimeout(
+        () => { dispatch(decrement()) },
+        1000
+    );
+}
 
 
 

@@ -6,9 +6,9 @@ import { List } from 'immutable';
 import './CounterList.css';
 /*
  * @name CounterList
-    여러 카운터를 렌더링하는 역할
+    여러 카운터를 렌더링하는 역할 
 */
-const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
+const CounterList = ({counters, onIncrement, onDecrement, onSetColor,decrementAsync,incrementAsync}) => {
 
         const counterList = counters.map((counter, i) =>(
             <Counter
@@ -17,6 +17,8 @@ const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
                 {...counter.toJS()}
                 onIncrement={onIncrement}
                 onDecrement={onDecrement}
+                incrementAsync={incrementAsync}
+                decrementAsync={decrementAsync}
                 onSetColor={onSetColor}
             />
         ));

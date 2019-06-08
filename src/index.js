@@ -5,8 +5,6 @@ import './index.css';
 import store from './store'
 
 // 리덕스 관련 호출
-import { createStore } from 'redux';
-import reducers  from './modules';
 import { Provider } from 'react-redux';
 
 
