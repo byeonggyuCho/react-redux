@@ -1,5 +1,6 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers  } from 'redux';
 import modules from './modules';
+import post from './modules/post'
 
 //middleware
 import { createLogger } from 'redux-logger';
@@ -17,6 +18,8 @@ const logger = createLogger();
  *      스토어 생성 : 내가 만든 리듀서를 전달
  *      개발자도구 활성화( window.devToolsException )
  */
+
+const reducer = combineReducers({modules,    post});
 const store = createStore(modules, applyMiddleware(logger, ReduxThunk), window.devToolsException && window.devToolsException());
 
 export default store;

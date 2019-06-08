@@ -58,7 +58,7 @@ const initialState = Map({
     counters :List([
         Map({
             color: 'black',
-            number:0
+            number:1
         })
     ])
 });
