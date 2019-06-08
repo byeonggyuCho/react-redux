@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import './index.css';
-
+import store from './store'
 
 // 리덕스 관련 호출
 import { createStore } from 'redux';
@@ -17,7 +17,7 @@ import { Provider } from 'react-redux';
  *      스토어 생성 : 내가 만든 리듀서를 전달
  *      개발자도구 활성화( window.devToolsException )
  */
-const store = createStore(reducers, window.devToolsException && window.devToolsException());
+//const store = createStore(reducers, window.devToolsException && window.devToolsException());
 
 /**
  * @name Provider
@@ -31,4 +31,3 @@ ReactDOM.render(
     </Provider>, 
     document.getElementById('root')
 );
-

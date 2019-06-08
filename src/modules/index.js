@@ -1,3 +1,5 @@
+
+
 /**
  *  # Ducks  구조
  *      액션타입, 액션 생성함수, 리듀서 한방에! 모듈화.
@@ -15,6 +17,23 @@ export const DECREMENT  = 'counter/DECREMENT';
 export const SET_COLOR  = 'counter/SET_COLOR';
 export const CREATE     = 'counter/CREATE';
 export const REMOVE     = 'counter/REMOVE';
+
+
+// export const incrementAsync = () => dispatch => {
+//     setTimeout(
+//         () => { dispatch(increment()) },
+//         1000
+//     );
+// }
+
+// export const decrementAsync = () => dispatch => {
+//     setTimeout(
+//         () => { dispatch(decrement()) },
+//         1000
+//     );
+// }
+
+
 
 /*
     #2. 액션생성함수
@@ -100,5 +119,5 @@ export default handleActions({
             action.payload, 
             (counter) => counter.set('color', action.payload.color))
         );
-    },
+    }
 }, initialState);

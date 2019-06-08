@@ -7,10 +7,6 @@ import './CounterList.css';
 /*
  * @name CounterList
     여러 카운터를 렌더링하는 역할
-    
-
-    
-
 */
 const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
 
