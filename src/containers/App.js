@@ -8,13 +8,16 @@ import CounterListContainer from './CounterListContainer';
 //lib
 import getRandomColor from '../lib/getRandomColor'
 //module
-import * as actions from '../modules';
+import * as counterActions from '../modules/counter';
 /*
     프로퍼티로 전달받은 이벤트를 버튼컴포넌트에 전달한다.
 */
 class App extends Component {
+
+
     render () {
         const {  onCreate, onRemove} = this.props;
+
         return (
             <div className="App">
                 <Buttons
@@ -31,8 +34,8 @@ class App extends Component {
 //파라미터는 payload 속성에 저장된다.
 //APP 컴포넌트에 props에 onCreate, oRemove속성을 전달해서 dispatch를 연결시키겠다.
 const mapDispatchToProps  = (dispatch) =>({
-    onCreate: () => dispatch(actions.create(getRandomColor())),
-    onRemove: (index) => dispatch(actions.remove(index))
+    onCreate: () => dispatch(counterActions.create(getRandomColor())),
+    onRemove: (index) => dispatch(counterActions.remove(index)),
 });
 // 리덕스에 연결을 시키고 내보낸다
 

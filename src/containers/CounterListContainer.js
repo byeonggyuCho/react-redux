@@ -2,7 +2,7 @@ import CounterList from '../components/CounterList';
 import { connect } from 'react-redux';
 
 //module
-import * as actions from '../modules';
+import * as actions from '../modules/counter';
 //libary
 import getRandomColor from '../lib/getRandomColor';
 
