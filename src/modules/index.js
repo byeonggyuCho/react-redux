@@ -20,16 +20,16 @@ export const REMOVE     = 'counter/REMOVE';
 
 
 
-export const incrementAsync = () => dispatch => {
+export const incrementAsync = (idx) => dispatch => {
     setTimeout(
-        () => { dispatch(increment()) },
+        () => { dispatch(increment(idx)) },
         1000
     );
 }
 
-export const decrementAsync = () => dispatch => {
+export const decrementAsync = (idx) => dispatch => {
     setTimeout(
-        () => { dispatch(decrement()) },
+        () => { dispatch(decrement(idx)) },
         1000
     );
 }

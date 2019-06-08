@@ -9,13 +9,6 @@ import { Provider } from 'react-redux';
 
 
 
-/**
- * @name createStore
- * @description 
- *      스토어 생성 : 내가 만든 리듀서를 전달
- *      개발자도구 활성화( window.devToolsException )
- */
-//const store = createStore(reducers, window.devToolsException && window.devToolsException());
 
 /**
  * @name Provider

@@ -12,12 +12,12 @@ const Counter = ({number, color, index, onIncrement, onDecrement, onSetColor,inc
     return (
         <div
             className ="Counter"
-            //onClick      = {()=> onIncrement(index)}
             onClick      = {()=> incrementAsync(index)}
             onDoubleClick= {()=> onSetColor(index)}
             onContextMenu= {(e) => {
                 e.preventDefault();
-                onDecrement(index);
+                //onDecrement(index);
+                decrementAsync(index);
             }}
             style={{
                 backgroundColor:color
